@@ -1,7 +1,5 @@
-# Dotnet core boilerplate with tests
+# Dotnet core library with xunit tests
 ## Setup
-
-Create the base solution
 
     dotnet new sln -o library-with-tests
     
@@ -12,5 +10,8 @@ Create the base solution
     dotnet new xunit -o test-library
 
     dotnet add test-library/test-library.csproj reference library/library.csproj
+---
+    dotnet test
+
 
     
