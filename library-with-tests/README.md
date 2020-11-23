@@ -1,5 +1,5 @@
 # Dotnet core library with xunit tests
-## Setup
+## Steps to get this setup
 
     dotnet new sln -o library-with-tests
     
@@ -10,6 +10,8 @@
     dotnet new xunit -o test-library
 
     dotnet add test-library/test-library.csproj reference library/library.csproj
+
+    dotnet sln add test-library/test-library.csproj
 ---
     dotnet test
 
