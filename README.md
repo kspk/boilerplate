@@ -5,3 +5,4 @@ A set of boilerplate projects to get a quickstart, with instructions to recreate
 ## List of projects
 - [Dotnet core Library with Unit tests](/library-with-tests)
 - [Dotnet core Website with Static content](/dotnet-static-web)
+- [Static Web Starter with ReacJS, SASS](/web-starter-react-scss)
