@@ -32,11 +32,12 @@ module.exports = {
 
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: [".ts", ".tsx"]
+        extensions: [".ts", ".tsx", ".js", ".jsx"]
     },
     entry: {
         "js/indexjs": "./src/js/indexjs.js",
         "js/indexts": "./src/ts/indexts.ts",
+        "js/indextsx": "./src/tsx/indextsx.tsx",
         "css/indexscss": "./src/sass/index.scss",
         "css/cssfile": "./src/css/cssfile.css",
         assets: "./copyfiles.js"
