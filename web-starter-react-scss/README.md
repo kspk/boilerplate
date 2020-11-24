@@ -22,6 +22,7 @@ Includes basic setup with
     npm i mini-css-extract-plugin --save-dev
     npm i css-loader --save-dev
     npm i sass sass-loader --save-dev
+    npm i file-loader --save-dev
 
     npm i clean-webpack-plugin --save-dev
 

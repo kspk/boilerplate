@@ -8,7 +8,12 @@ class MiniCssExtractPluginCleanup {
         compiler.hooks.emit.tapAsync("MiniCssExtractPluginCleanup", (compilation, callback) => {
             Object.keys(compilation.assets)
                 .filter(asset => {
-                    return ["css/**/*.js", "css/**/*.js.map"].some(pattern => {
+                    return [
+                            "css/**/*.js", 
+                            "css/**/*.js.map", 
+                            "assets.js", 
+                            "assets.js.map"
+                    ].some(pattern => {
                         return minimatch(asset, pattern);
                     });
                 })
@@ -20,7 +25,6 @@ class MiniCssExtractPluginCleanup {
         });
     }
 }
-
 
 module.exports = {
     mode: "development",
@@ -34,7 +38,8 @@ module.exports = {
         "js/indexjs": "./src/js/indexjs.js",
         "js/indexts": "./src/ts/indexts.ts",
         "css/indexscss": "./src/sass/index.scss",
-        "css/cssfile": "./src/css/cssfile.css"
+        "css/cssfile": "./src/css/cssfile.css",
+        assets: "./copyfiles.js"
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -63,6 +68,21 @@ module.exports = {
                     'css-loader',
                     'sass-loader'
                 ],
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                loader: "file-loader",
+                options: {
+                    outputPath: "assets/imgs",
+                    name: "[name].[ext]"
+                }
+            },
+            {
+                test: /\.(ico|html?)$/i,
+                loader: "file-loader",
+                options: {
+                    name: "[name].[ext]"
+                }
             }
         ]
     },
